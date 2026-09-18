@@ -10,8 +10,7 @@
     --run:#BE5A2E; --pass:#0F7DA8;
     --run-soft:#F5E2D7; --pass-soft:#D7E9F2;
     --stop:#8A2F1E; --stop-soft:#F3DDD7;
-    --mute:#6B7369; --mute-soft:#E4E7E1;
-    --grid:#D6DBD3; --base:#8A938A;
+    --grid:#D6DBD3;
     --display:"Saira Condensed","Arial Narrow",sans-serif;
     --body:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -23,8 +22,7 @@
       --run:#D4703E; --pass:#3E9BCC;
       --run-soft:#2C1A11; --pass-soft:#0E2430;
       --stop:#DE7C63; --stop-soft:#2E1712;
-      --mute:#8B958B; --mute-soft:#1A211C;
-      --grid:#222B25; --base:#6D776E;
+      --grid:#222B25;
     }
   }
   :root[data-theme="dark"]{
@@ -33,38 +31,52 @@
     --run:#D4703E; --pass:#3E9BCC;
     --run-soft:#2C1A11; --pass-soft:#0E2430;
     --stop:#DE7C63; --stop-soft:#2E1712;
-    --mute:#8B958B; --mute-soft:#1A211C;
-    --grid:#222B25; --base:#6D776E;
+    --grid:#222B25;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
-       font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1000px;margin:0 auto;padding-inline:20px;padding-block:24px 56px}
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:940px;margin:0 auto;padding-inline:20px;padding-block:26px 64px}
 
   /* ---------- masthead ---------- */
-  header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;
-         gap:10px 24px;border-bottom:3px solid var(--ink);padding-bottom:12px}
-  .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
-           color:var(--ink-3);margin:0 0 3px}
-  h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,7vw,60px);line-height:.9;
+  header{border-bottom:3px solid var(--ink);padding-bottom:14px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+           color:var(--ink-3);margin:0 0 4px}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,8vw,66px);line-height:.9;
      margin:0;text-transform:uppercase;letter-spacing:-.005em}
-  .opp{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:right;
-       line-height:1.7;flex:none}
+  .subhead{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);margin:8px 0 0}
+  .intro{font-size:17px;color:var(--ink-2);margin:12px 0 0;max-width:60ch;line-height:1.55}
+  .intro b{color:var(--ink)}
 
-  /* ---------- the call ---------- */
-  .call{margin:22px 0 0;border:2px solid var(--ink);border-radius:4px;overflow:hidden;
+  /* ---------- the one read ---------- */
+  .call{margin:26px 0 0;border:3px solid var(--ink);border-radius:5px;overflow:hidden;
         background:var(--card)}
-  .callhead{background:var(--ink);color:var(--ground);padding:7px 16px;
-            font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .callhead{background:var(--ink);color:var(--ground);padding:9px 18px;
+            font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
   .steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch}
-  @media (max-width:720px){ .steps{grid-template-columns:1fr} }
-  .step{padding:18px 16px 16px;min-width:0}
-  .steplab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
-           color:var(--ink-3);margin-bottom:7px}
+  @media (max-width:760px){ .steps{grid-template-columns:1fr} }
+  .step{padding:22px 20px 20px;min-width:0}
+  .steplab{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+           color:var(--ink-3);margin-bottom:9px}
   .stepbig{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:.92;
-           font-size:clamp(26px,4.4vw,40px);letter-spacing:-.005em}
+           font-size:clamp(30px,5.4vw,46px);letter-spacing:-.005em}
   .stepbig.run{color:var(--run)}
-  .pcard{display:block;width:100%;max-width:330px;height:auto;margin:10px 0 4px}
+  .stepsub{font-size:15.5px;color:var(--ink-2);margin-top:10px;line-height:1.55}
+  .stepsub b{color:var(--ink)}
+  .arrow{display:flex;align-items:center;justify-content:center;padding:0 6px;
+         color:var(--ink-3);font-size:34px;line-height:1}
+  @media (max-width:760px){
+    .arrow{padding:0 20px 8px;justify-content:flex-start;transform:rotate(90deg);
+           transform-origin:left center;height:26px}
+    .step{padding-top:12px}
+    .step:first-child{padding-top:22px}
+  }
+  .kicker{border-top:1px solid var(--rule);background:var(--sunk);padding:14px 18px;
+          font-size:16px;color:var(--ink-2)}
+  .kicker b{color:var(--ink)}
+
+  /* ---------- alignment cards ---------- */
+  .pcard{display:block;width:100%;max-width:380px;height:auto;margin:14px 0 6px}
   .pc-los{stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:5 4}
   .pc-dot{stroke:var(--card);stroke-width:1.5}
   .pc-ol{fill:var(--ink-2)}
@@ -73,170 +85,150 @@
   .pc-wr{fill:var(--ink-3)}
   .pc-te{fill:var(--pass)}
   .pc-lab{font-family:var(--mono);font-size:8px;font-weight:600;fill:var(--card)}
-  .pc-gap{font-family:var(--mono);font-size:9px;font-weight:600;fill:var(--run)}
+  .pc-gap{font-family:var(--mono);font-size:10px;font-weight:600;fill:var(--run)}
   .pc-bgap{fill:var(--run);opacity:.14}
-  .pccap{font-family:var(--mono);font-size:10px;color:var(--ink-3);line-height:1.45;
-         margin:0 0 2px}
-  .gfpair{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-  .gfcell{margin:0;background:var(--card);border:1px solid var(--rule);border-radius:3px;
-          padding:12px 14px 10px}
-  .gfcell svg{display:block;width:100%;height:auto;margin:2px 0 4px}
-  .gfhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
-          gap:4px 12px;margin-bottom:2px}
-  .gfhead b{font-family:var(--display);font-weight:600;font-size:19px;text-transform:uppercase}
-  .gfn{font-family:var(--mono);font-size:11px;white-space:nowrap}
-  .gfn.run{color:var(--run)} .gfn.pass{color:var(--pass)}
+  .cap{font-size:14px;color:var(--ink-3);line-height:1.5;margin:0 0 2px}
+  .cap b{color:var(--ink-2)}
+
+  /* ---------- sections ---------- */
+  h2.sec{font-family:var(--display);font-size:clamp(26px,4.2vw,36px);text-transform:uppercase;
+         margin:44px 0 4px;letter-spacing:.01em}
+  p.lede{margin:0 0 18px;color:var(--ink-2);max-width:62ch;font-size:16.5px}
+
+  /* ---------- sharper reads ---------- */
+  .read{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+        margin-bottom:12px;overflow:hidden;break-inside:avoid}
+  .read.top{border-color:var(--run);border-width:1px 1px 1px 5px}
+  .rtop{display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:center;
+        padding:16px 18px 12px}
+  @media (max-width:640px){ .rtop{grid-template-columns:1fr} }
+  .rname{font-family:var(--display);font-weight:600;font-size:26px;text-transform:uppercase;
+         line-height:1.05}
+  .rwhen{font-size:14.5px;color:var(--ink-3);margin-top:3px}
+  .rbig{font-family:var(--display);font-weight:700;font-size:44px;color:var(--run);
+        line-height:.95;white-space:nowrap;text-align:right}
+  @media (max-width:640px){ .rbig{text-align:left} }
+  .rbig span{font-family:var(--body);font-weight:600;font-size:16px;display:block;
+             color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+  .rbar{padding:0 18px 4px}
+  .rbar svg{display:block;width:100%;max-width:520px;height:auto}
+  .rb-band{fill:var(--run);opacity:.20}
+  .rb-bar{fill:var(--run)}
+  .rb-track{fill:var(--grid)}
+  .rrange{padding:0 18px 14px;font-size:14.5px;color:var(--ink-3)}
+  .rfoot{border-top:1px solid var(--rule);padding:11px 18px 13px;background:var(--sunk);
+         font-size:14px;color:var(--ink-3)}
+  .rfoot code{font-family:var(--mono);font-size:13px;color:var(--ink-2);word-break:break-word}
+  .rfoot .lbl{font-family:var(--mono);letter-spacing:.09em;text-transform:uppercase;
+              font-size:11px}
+  details.film{margin-top:9px}
+  details.film summary{cursor:pointer;font-size:13.5px;color:var(--ink-2)}
+  details.film summary:hover{color:var(--ink)}
+  .films{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;
+         margin-top:11px}
+  .film{border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--card)}
+  .film img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+  .film figcaption{padding:6px 8px;font-size:11.5px;color:var(--ink-3);line-height:1.45}
+  .film figcaption b{display:block;color:var(--ink);font-size:13px}
+
+  /* ---------- side-by-side cards ---------- */
+  .pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .box{margin:0;background:var(--card);border:1px solid var(--rule);border-radius:4px;
+       padding:16px 18px 14px;break-inside:avoid}
+  .box svg{display:block;width:100%;height:auto;margin:4px 0 6px}
+  .boxhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+           gap:6px 14px;margin-bottom:4px}
+  .boxhead b{font-family:var(--display);font-weight:600;font-size:23px;text-transform:uppercase;
+             line-height:1.1}
+  .tag{font-family:var(--display);font-weight:700;font-size:24px;white-space:nowrap}
+  .tag.run{color:var(--run)}
+  .tag.flat{color:var(--ink-3)}
+
+  /* ---------- gap diagram ---------- */
   .gf-los{stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:6 5}
   .gf-ol{fill:var(--ink-2);stroke:var(--card);stroke-width:1.5}
   .gf-qb{fill:var(--ink);stroke:var(--card);stroke-width:1.5}
   .gf-rb{fill:var(--ink-2);stroke:var(--card);stroke-width:1.5}
-  .gf-gap{font-family:var(--mono);font-size:12px;font-weight:600;fill:var(--ink-3)}
-  .gf-gap.hot{fill:var(--ink);font-size:14px}
-  .gf-arrow{cursor:default}
-  .gfnote{margin-top:9px}
-  .compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-  .cmp{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:12px 14px}
-  .cmphead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
-           gap:6px 12px;margin-bottom:2px}
-  .cmphead b{font-family:var(--display);font-weight:600;font-size:19px;text-transform:uppercase;
-             line-height:1.1}
-  .cmprate{font-family:var(--mono);font-size:13px;font-weight:600;white-space:nowrap}
-  .cmprate.run{color:var(--run)}
-  .cmprate.flat{color:var(--ink-3)}
-  .stepsub{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);margin-top:7px;
-           line-height:1.6;font-variant-numeric:tabular-nums}
-  .arrow{display:flex;align-items:center;justify-content:center;padding:0 4px;
-         color:var(--ink-3);font-size:26px;line-height:1}
-  @media (max-width:720px){
-    .arrow{padding:0 16px 6px;justify-content:flex-start;transform:rotate(90deg);
-           transform-origin:left center;height:22px}
-    .step{padding-top:10px}
-    .step:first-child{padding-top:18px}
-  }
-  .kicker{border-top:1px solid var(--rule);background:var(--sunk);padding:11px 16px;
-          font-size:14px;color:var(--ink-2)}
-  .kicker b{color:var(--ink)}
+  .gf-gap{font-family:var(--mono);font-size:13px;font-weight:600;fill:var(--ink-3)}
+  .gf-gap.hot{fill:var(--ink);font-size:16px}
 
-  /* ---------- sections ---------- */
-  h2.sec{font-family:var(--display);font-size:clamp(23px,3.6vw,30px);text-transform:uppercase;
-         margin:36px 0 3px;letter-spacing:.01em}
-  p.lede{margin:0 0 15px;color:var(--ink-2);max-width:68ch}
+  /* ---------- their calls ---------- */
+  table.calls{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 10px}
+  table.calls th{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-3);font-weight:500;text-align:left;
+    padding:6px 8px;border-bottom:1px solid var(--rule)}
+  table.calls td{padding:8px;border-bottom:1px solid var(--rule)}
+  table.calls tr:last-child td{border-bottom:0}
+  table.calls td.c{font-family:var(--mono);font-size:14px;color:var(--ink);
+                   word-break:break-word}
+  table.calls td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;
+                   color:var(--ink-2)}
+  table.calls td.g{font-family:var(--display);font-weight:700;font-size:19px;color:var(--run)}
 
-  .legend{display:flex;gap:15px;flex-wrap:wrap;align-items:center;margin:0 0 11px;
-          font-family:var(--mono);font-size:10.5px;color:var(--ink-2)}
-  .key{display:flex;align-items:center;gap:6px}
-  .sw{width:12px;height:12px;border-radius:2px;flex:none}
-  .sw.r{background:var(--run)} .sw.p{background:var(--pass)}
-  .sw.b{background:transparent;border-left:2px dashed var(--base);width:2px;border-radius:0;
-        height:13px}
+  /* ---------- callout ---------- */
+  .heads{margin-top:18px;background:var(--stop-soft);border:1px solid var(--rule);
+         border-left:5px solid var(--stop);border-radius:4px;padding:16px 18px;
+         break-inside:avoid}
+  .heads h3{font-family:var(--display);font-size:24px;text-transform:uppercase;margin:0 0 6px;
+            color:var(--stop)}
+  .heads p{margin:0;font-size:16px;color:var(--ink-2)}
+  .heads p b{color:var(--ink)}
 
-  /* ---------- trigger rows ---------- */
-  .trig{background:var(--card);border:1px solid var(--rule);border-radius:3px;
-        margin-bottom:9px;overflow:hidden;break-inside:avoid}
-  .trig.top{border-color:var(--run);border-width:1px 1px 1px 4px}
-  .trow{display:grid;grid-template-columns:minmax(150px,1.05fr) minmax(190px,1.9fr) auto;
-        gap:8px 16px;align-items:center;padding:12px 15px}
-  @media (max-width:720px){ .trow{grid-template-columns:1fr;align-items:start} }
-  .tname{font-family:var(--display);font-weight:600;font-size:22px;text-transform:uppercase;
-         line-height:1.02;min-width:0}
-  .tdesc{font-family:var(--body);font-size:12px;text-transform:none;color:var(--ink-3);
-         font-weight:400;display:block;margin-top:2px;letter-spacing:0}
-  .tchart svg{display:block;width:100%;height:auto;overflow:visible}
-  .tchart svg text{font-family:var(--mono);font-size:9px}
-  .tchart svg text.tick{fill:var(--ink-3)}
-  .tchart svg text.basel{fill:var(--base)}
-  .tnums{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;
-         white-space:nowrap}
-  @media (max-width:720px){ .tnums{text-align:left} }
-  .tbig{font-size:27px;font-weight:600;color:var(--run);line-height:1}
-  .tsmall{font-size:10.5px;color:var(--ink-3);margin-top:3px;letter-spacing:.03em}
-  .tfoot{border-top:1px solid var(--rule);padding:7px 15px 9px;background:var(--sunk);
-         font-family:var(--mono);font-size:10.5px;color:var(--ink-3);line-height:1.65}
-  .tfoot code{color:var(--ink-2);word-break:break-word}
-  .tfoot .lbl{letter-spacing:.09em;text-transform:uppercase;font-size:9.5px}
-  details.film{margin-top:6px}
-  details.film summary{cursor:pointer;font-size:10px;letter-spacing:.09em;text-transform:uppercase;
-                       color:var(--ink-2)}
-  details.film summary:hover{color:var(--ink)}
-  .films{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:7px;
-         margin-top:9px}
-  .film{border:1px solid var(--rule);border-radius:2px;overflow:hidden;background:var(--card)}
-  .film img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-  .film figcaption{padding:4px 6px;font-size:9px;color:var(--ink-3);line-height:1.4}
-  .film figcaption b{display:block;color:var(--ink);font-size:10px}
-
-  /* ---------- gap chart ---------- */
-  .gapbox{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:15px;
-          break-inside:avoid}
-  .gapbox svg{display:block;width:100%;height:auto;overflow:visible}
-  .gapbox svg text{font-family:var(--mono)}
-  .gapbox svg text.cat{font-size:11px;fill:var(--ink);font-weight:600}
-  .gapbox svg text.val{font-size:10px;fill:var(--ink-2)}
-  .gapbox svg text.tick{font-size:9px;fill:var(--ink-3)}
-  .gapnote{margin:12px 0 0;font-size:13.5px;color:var(--ink-2)}
-  .gapnote b{color:var(--ink)}
-
-  /* ---------- don't coach ---------- */
-  .nots{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:10px}
-  .not{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--stop);
-       border-radius:3px;padding:12px 14px;break-inside:avoid}
-  .not h3{font-family:var(--display);font-size:19px;text-transform:uppercase;margin:0 0 3px;
+  /* ---------- don't coach these ---------- */
+  .nots{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+  .not{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--stop);
+       border-radius:4px;padding:15px 17px;break-inside:avoid}
+  .not h3{font-family:var(--display);font-size:22px;text-transform:uppercase;margin:0 0 6px;
           line-height:1.05}
-  .not .verdict{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:600;
-                letter-spacing:.09em;text-transform:uppercase;padding:2px 7px;border-radius:2px;
-                background:var(--stop-soft);color:var(--stop);margin-bottom:7px}
-  .not p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.5}
-  .not .b{display:block;margin-top:6px;font-family:var(--mono);font-size:10.5px;
-          color:var(--ink-3)}
+  .not p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.5}
+  .not .b{display:block;margin-top:8px;font-size:14px;color:var(--ink-3)}
 
-  /* ---------- caveats ---------- */
-  .cav{margin-top:14px;background:var(--card);border:1px solid var(--rule);border-radius:3px;
-       padding:14px 16px;break-inside:avoid}
-  .cav h3{font-family:var(--display);font-size:19px;text-transform:uppercase;margin:0 0 8px}
-  .cav ul{margin:0;padding-left:17px;color:var(--ink-2);font-size:13.5px}
-  .cav li{margin-bottom:6px} .cav li:last-child{margin-bottom:0}
+  /* ---------- checked / caveats ---------- */
+  .checked{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .chk{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:15px 17px;
+       break-inside:avoid}
+  .chk.ok{border-left:5px solid var(--run)}
+  .chk.fix{border-left:5px solid var(--stop)}
+  .chklab{font-family:var(--display);font-size:21px;text-transform:uppercase;margin-bottom:8px}
+  .chk.fix .chklab{color:var(--stop)}
+  .chk ul{margin:0;padding-left:20px}
+  .chk li{font-size:15px;color:var(--ink-2);margin-bottom:9px;line-height:1.5}
+  .chk li:last-child{margin-bottom:0}
+  .cav{margin-top:18px;background:var(--card);border:1px solid var(--rule);border-radius:4px;
+       padding:16px 18px;break-inside:avoid}
+  .cav h3{font-family:var(--display);font-size:24px;text-transform:uppercase;margin:0 0 10px}
+  .cav ul{margin:0;padding-left:20px;color:var(--ink-2);font-size:15.5px}
+  .cav li{margin-bottom:8px} .cav li:last-child{margin-bottom:0}
   .cav b{color:var(--ink)}
 
-  /* ---------- table ---------- */
-  .tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:3px;background:var(--card);
-             margin-top:12px}
-  table{width:100%;border-collapse:collapse;font-size:12.5px}
-  th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--rule)}
-  th{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
-     color:var(--ink-3);font-weight:500}
-  td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
-  tr:last-child td{border-bottom:0}
-
   .tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--ground);
-       font-family:var(--mono);font-size:11px;padding:5px 8px;border-radius:3px;z-index:40;
-       max-width:230px;line-height:1.45}
-  .loading{padding:50px 20px;text-align:center;color:var(--ink-3);font-family:var(--mono)}
-  :focus-visible{outline:2px solid var(--run);outline-offset:2px}
+       font-family:var(--body);font-size:13px;padding:7px 10px;border-radius:4px;z-index:40;
+       max-width:250px;line-height:1.45}
+  .loading{padding:60px 20px;text-align:center;color:var(--ink-3);font-family:var(--mono)}
+  :focus-visible{outline:3px solid var(--run);outline-offset:2px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-  /* ---------- print: a coach may bring this to the box ---------- */
+  /* ---------- print: for the box or a call-sheet sleeve ---------- */
   @media print{
     :root{--ground:#fff;--card:#fff;--sunk:#f4f4f2;--rule:#bbb;--ink:#000;--ink-2:#333;
-          --ink-3:#666;--grid:#ddd;--base:#888}
-    body{background:#fff;font-size:11pt}
+          --ink-3:#555;--grid:#ddd}
+    body{background:#fff;font-size:11.5pt}
     .wrap{max-width:none;padding:0}
-    h2.sec{margin-top:20px;page-break-after:avoid}
-    .trig,.not,.cav,.gapbox,.call{page-break-inside:avoid}
+    h2.sec{margin-top:22px;page-break-after:avoid}
+    .read,.not,.cav,.box,.call,.chk,.heads{page-break-inside:avoid}
     details.film{display:none}
     .tip{display:none}
-    .printonly{display:block!important}
   }
-  .printonly{display:none}
 </style>
 
 <div class="wrap">
   <header>
-    <div>
-      <p class="eyebrow">Defensive call sheet &middot; prepared from 3 games of tagged film</p>
-      <h1>Grace Prep Call Sheet</h1>
-    </div>
-    <p class="opp">OPPONENT: GRACE PREP ACADEMY<br>102 offensive snaps charted<br>
-      <span id="stamp"></span></p>
+    <p class="eyebrow">Which reads hold up &middot; Grace Prep</p>
+    <h1>Grace Prep Call Sheet</h1>
+    <p class="intro">Your breakdown already tells you what Grace Prep did. This tells you
+      which of it they will do again. We put <b>100 possible reads</b> through the same
+      test and <b>six</b> came out the other side.</p>
+    <p class="subhead" id="stamp"></p>
   </header>
 
   <div id="app" class="loading">Loading the sheet&hellip;</div>
@@ -252,45 +244,36 @@
     c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const pc = v => Math.round(v * 100) + '%';
 
-  // ---- run-rate strip: one 0-100% scale, base rate marked, CI as a whisker -------
-  const W = 340, H = 42, PL = 4, PR = 4;
-  function runStrip(t, base){
-    const x = v => PL + v * (W - PL - PR);
-    const y = 17, r = t.run;
-    const ticks = [0, 0.5, 1];
-    const games = Object.entries(t.run_per_game || {}).map(([g, d]) =>
-      `<circle cx="${x(d.rate).toFixed(1)}" cy="${y + 13}" r="3.6" fill="var(--run)"
-         stroke="var(--card)" stroke-width="1.5"
-         data-tip="Game ${g}: ${pc(d.rate)} run on ${d.n} plays"></circle>`).join('');
-    return `<svg viewBox="0 0 ${W} ${H}" role="img"
-        aria-label="${pc(r.rate)} run, 95% interval ${pc(r.lo)} to ${pc(r.hi)}, base rate ${pc(base)}">
-      ${ticks.map(v => `<line x1="${x(v).toFixed(1)}" y1="${y-9}" x2="${x(v).toFixed(1)}" y2="${y+5}"
-          stroke="var(--grid)" stroke-width="1"></line>`).join('')}
-      ${ticks.map(v => `<text class="tick" x="${x(v).toFixed(1)}" y="${H-2}"
-          text-anchor="${v===0?'start':v===1?'end':'middle'}">${v*100}%</text>`).join('')}
-      <line x1="${x(base).toFixed(1)}" y1="${y-11}" x2="${x(base).toFixed(1)}" y2="${y+20}"
-        stroke="var(--base)" stroke-width="1.5" stroke-dasharray="3 3"></line>
-      <line x1="${x(r.lo).toFixed(1)}" y1="${y}" x2="${x(r.hi).toFixed(1)}" y2="${y}"
-        stroke="var(--run)" stroke-width="1.5" opacity=".5"></line>
-      <rect x="${x(0).toFixed(1)}" y="${y-4}" width="${(x(r.rate)-x(0)).toFixed(1)}" height="8"
-        rx="4" fill="var(--run)"
-        data-tip="${r.k} of ${r.n} were runs — ${pc(r.rate)}, 95% CI ${pc(r.lo)}–${pc(r.hi)}"></rect>
-      ${games}
+  // ---- run-rate bar -------------------------------------------------------------
+  // The old version drew a confidence whisker, a base-rate line and a dot per game on
+  // one axis. That is four ideas a coach has to decode. Here the bar is the rate and
+  // the pale band behind it is the range the film can actually support; the range is
+  // also written out in words underneath, so nobody has to read a chart at all.
+  const BW = 520, BH = 34;
+  function rateBar(r){
+    const x = v => 3 + v * (BW - 6);
+    const y = 8, h = 18;
+    return `<svg viewBox="0 0 ${BW} ${BH}" role="img"
+        aria-label="${pc(r.rate)} run on ${r.n} snaps; on this much film the true rate
+                    could sit anywhere from ${pc(r.lo)} to ${pc(r.hi)}">
+      <rect class="rb-track" x="3" y="${y}" width="${BW-6}" height="${h}" rx="9"></rect>
+      <rect class="rb-band" x="${x(r.lo).toFixed(1)}" y="${y}"
+        width="${(x(r.hi)-x(r.lo)).toFixed(1)}" height="${h}" rx="9"
+        data-tip="On ${r.n} snaps of film the real number could be anywhere in here"></rect>
+      <rect class="rb-bar" x="3" y="${y+4}" width="${(x(r.rate)-3).toFixed(1)}"
+        height="${h-8}" rx="5"
+        data-tip="${r.k} of ${r.n} snaps were runs"></rect>
     </svg>`;
   }
 
-  // ---- gap chart: where the ball actually goes, drawn on the line ----------------
-  // A bar chart of gap letters makes a coach translate A/B/C/D back into positions on
-  // the line. Drawing it on the line skips that step: arrow weight is the share of
-  // plays through that gap. Both sides are drawn at equal weight on purpose -- the
-  // gap tag says which gap, never which side, and direction tested as a coin flip.
+  // ---- gap diagram: where the ball goes, drawn on the line -----------------------
+  // Arrow weight is the share of plays through that gap. Both sides are drawn at the
+  // same weight on purpose: the film tells us which gap, never which side.
   const GW = 440, GH = 200, G_LOS = 112, G_MID = 220, G_OL = 28;
   function gapField(spread, total, tone, label){
     const map = Object.fromEntries(spread);
-    // Gap centres stepping outward from the ball, in half-OL-spacing units.
     const gaps = [['A', 0.5], ['B', 1.5], ['C', 2.5], ['D', 3.5], ['E-Alley', 4.6]];
     const ol = [-2,-1,0,1,2].map(i => G_MID + i * G_OL);
-    const origin = [G_MID, G_LOS + 62];
     const maxShare = Math.max(...gaps.map(([g]) => (map[g] || 0) / total), 0.01);
 
     const arrows = gaps.flatMap(([g, step]) => {
@@ -309,8 +292,8 @@
           [ex + Math.cos(ang + 2.5) * hl, ey + Math.sin(ang + 2.5) * hl],
           [ex + Math.cos(ang - 2.5) * hl, ey + Math.sin(ang - 2.5) * hl],
         ].map(p => p.map(v => v.toFixed(1)).join(',')).join(' ');
-        return `<g class="gf-arrow" data-tip="${map[g]} of ${total} ${label} hit ${g} gap — ${pc(share)}${
-              side === -1 ? ' (either side; the tag does not record which)' : ''}">
+        return `<g data-tip="${g} gap: ${map[g]} of ${total} ${label}${
+              side === -1 ? ' — could be either side' : ''}">
           <line x1="${sx.toFixed(1)}" y1="${(G_LOS + 46).toFixed(1)}"
             x2="${ex.toFixed(1)}" y2="${ey}" stroke="var(--${tone})"
             stroke-width="${w.toFixed(1)}" stroke-linecap="round" opacity=".88"></line>
@@ -323,53 +306,27 @@
       const gx = G_MID + side * step * G_OL;
       const share = (map[g] || 0) / total;
       return `<text class="gf-gap${share >= 0.25 ? ' hot' : ''}" x="${gx.toFixed(1)}"
-        y="${G_LOS + 26}" text-anchor="middle">${g === 'E-Alley' ? 'E' : g}</text>`;
+        y="${G_LOS + 27}" text-anchor="middle">${g === 'E-Alley' ? 'E' : g}</text>`;
     })).join('');
 
     return `<svg viewBox="0 0 ${GW} ${GH}" role="img"
-        aria-label="${label} by gap, drawn on the offensive line. ${
+        aria-label="Where their ${label} go, drawn on the offensive line. ${
           gaps.filter(([g]) => map[g]).map(([g]) =>
-            `${g}: ${pc((map[g]||0)/total)}`).join(', ')}. Arrows are drawn on both sides
-          because the tag records the gap, not the side.">
+            `${g} gap ${pc((map[g]||0)/total)}`).join(', ')}. Both sides are shown because
+          the film records the gap, not the side.">
       <line class="gf-los" x1="14" y1="${G_LOS}" x2="${GW - 14}" y2="${G_LOS}"></line>
       ${arrows}
       ${ol.map(x => `<circle class="gf-ol" cx="${x}" cy="${G_LOS}" r="8"></circle>`).join('')}
       <circle class="gf-qb" cx="${G_MID}" cy="${G_LOS + 30}" r="7"></circle>
-      <circle class="gf-rb" cx="${origin[0]}" cy="${origin[1]}" r="7"></circle>
+      <circle class="gf-rb" cx="${G_MID}" cy="${G_LOS + 62}" r="7"></circle>
       ${gapLabels}
     </svg>`;
   }
 
-  function gapChart(gap){
-    const rTot = gap.run_spread.reduce((a,[,v]) => a + v, 0);
-    const pTot = gap.pass_spread.reduce((a,[,v]) => a + v, 0);
-    return `<div class="gfpair">
-      <figure class="gfcell">
-        <figcaption class="gfhead"><b>Where the runs go</b>
-          <span class="gfn run">${rTot} tagged runs</span></figcaption>
-        ${gapField(gap.run_spread, rTot, 'run', 'runs')}
-        <p class="pccap">Four of five runs hit B gap &mdash; between guard and tackle.
-          Thickness is the share of runs.</p>
-      </figure>
-      <figure class="gfcell">
-        <figcaption class="gfhead"><b>Where the passes go</b>
-          <span class="gfn pass">${pTot} tagged passes</span></figcaption>
-        ${gapField(gap.pass_spread, pTot, 'pass', 'passes')}
-        <p class="pccap">Passes work outside &mdash; D gap and the alley. B gap is nearly
-          empty, which is what makes the split readable.</p>
-      </figure>
-    </div>
-    <p class="pccap gfnote">Both sides are drawn at the same weight deliberately. The
-      breakdown records which gap, never which side, and direction tested as a coin flip
-      across 108 rules &mdash; so this shows where, not which way.</p>`;
-  }
-
-  // ---- alignment card ----------------------------------------------------------
-  // Drawn from the personnel code, which is a count, not a picture: first digit is
-  // running backs, second is tight ends, the rest are receivers. The data confirms
-  // the convention holds here -- 32 personnel is always Wishbone, 00 always Empty.
-  // Line spacing and the backfield are therefore exact; receiver splits vary snap to
-  // snap and are drawn indicatively, which the caption says out loud.
+  // ---- alignment card -----------------------------------------------------------
+  // Drawn from the personnel count: first digit is backs, second is tight ends, the
+  // rest are receivers. Line and backfield are exact; receiver splits move snap to
+  // snap, which the caption says out loud.
   const CARD_W = 330, CARD_H = 172, LOS_Y = 74, MID = 165, OL_GAP = 23;
   function playCard(pers, backfield){
     const rb = +String(pers)[0], te = +String(pers)[1];
@@ -380,16 +337,12 @@
       (lab ? `<text class="pc-lab" x="${x.toFixed(1)}" y="${y + 3.4}"
                 text-anchor="middle">${lab}</text>` : '');
 
-    // B gap sits between guard and tackle, on both sides: direction had no tell,
-    // so neither side is favoured here.
     const bGaps = [(ol[0] + ol[1]) / 2, (ol[3] + ol[4]) / 2].map(x =>
       `<rect class="pc-bgap" x="${(x - 9).toFixed(1)}" y="${LOS_Y - 26}"
          width="18" height="52" rx="3"></rect>
        <text class="pc-gap" x="${x.toFixed(1)}" y="${LOS_Y - 32}"
          text-anchor="middle">B</text>`).join('');
 
-    // Backs: exact placement from the backfield tag, and exactly as many as the
-    // personnel code says -- an empty set draws none.
     const qbY = LOS_Y + 26;
     const side = backfield === 'LEFT' ? -1 : 1;
     const slots = backfield === 'PISTOL'
@@ -409,8 +362,9 @@
       dot(ol[4] + 24 + i * 22, LOS_Y, 'pc-te', 'Y')).join('');
 
     return `<svg class="pcard" viewBox="0 0 ${CARD_W} ${CARD_H}" role="img"
-        aria-label="${rb} backs, ${te} tight ends, ${wr} receivers, backfield ${backfield || 'varies'};
-                    B gaps highlighted between guard and tackle on both sides">
+        aria-label="${rb} back${rb===1?'':'s'}, ${te} tight end${te===1?'':'s'},
+                    ${wr} receivers. Shaded strips are the B gaps, between guard and tackle
+                    on each side.">
       <line class="pc-los" x1="6" y1="${LOS_Y}" x2="${CARD_W - 6}" y2="${LOS_Y}"></line>
       ${bGaps}
       ${ol.map(x => dot(x, LOS_Y, 'pc-ol', '')).join('')}
@@ -424,44 +378,59 @@
     const plays = g.plays;
     const all = Object.values(plays);
     const base = all.filter(p => p.type === 'Run').length / all.length;
-    document.getElementById('stamp').textContent =
-      'Base run rate ' + pc(base) + ' · ' + all.length + ' plays';
+    const pTot = g.gap.pass_spread.reduce((a,[,v]) => a + v, 0);
+    const passB = (Object.fromEntries(g.gap.pass_spread).B || 0);
 
-    // Most frequent looks first: on a sideline, how often you face it matters.
-    const trigs = [...g.triggers].sort((a,b) => b.run.n - a.run.n);
-    const falcon = g.triggers.find(t => t.name === 'FALCON');
+    document.getElementById('stamp').textContent =
+      'Grace Prep Academy · ' + all.length + ' offensive snaps from 3 games of film';
+
     const p20    = g.triggers.find(t => t.name === '20 personnel');
-    const fbr    = g.triggers.find(t => t.name === 'FALCON, back right');
+    const p20r   = g.triggers.find(t => t.name === '20 personnel, back right');
+    const falcon = g.triggers.find(t => t.name === 'FALCON');
+    const flong  = g.triggers.find(t => t.name === 'FALCON on 8+ to go');
+    const passSeries20 = (g.series && g.series.by_pers && g.series.by_pers['20'] || {}).pass_series || 0;
 
     const hudl = clips => [1,2,3].map(gm => {
       const inG = clips.map(c => plays[String(c)]).filter(p => p && p.game === gm);
       if(!inG.length) return '';
-      return `G${gm} <code>#${inG.map(p => esc(p.playno || '?')).join(', #')}</code>`;
-    }).filter(Boolean).join(' &nbsp;&middot;&nbsp; ');
+      return `Game ${gm} <code>#${inG.map(p => esc(p.playno || '?')).join(', #')}</code>`;
+    }).filter(Boolean).join(' &nbsp; ');
 
-    const trigRow = (t, i) => `<article class="trig${i===0?' top':''}">
-      <div class="trow">
-        <div class="tname">${esc(t.name)}<span class="tdesc">${esc(t.desc)}</span></div>
-        <div class="tchart">${runStrip(t, base)}</div>
-        <div class="tnums">
-          <div class="tbig">${pc(t.run.rate)}</div>
-          <div class="tsmall">RUN &middot; ${t.run.k}/${t.run.n} snaps</div>
-          <div class="tsmall">${pc(t.bgap_of_runs.rate)} of those to B gap</div>
+    // Three reads, widest first. They are the SAME plays looked at more narrowly, not
+    // three separate pieces of evidence, and the lede says so.
+    const reads = [
+      {t: p20,   name: 'Two backs, no tight end',
+       when: 'Any time they put two backs in the backfield'},
+      {t: p20r,  name: 'Two backs, back set right',
+       when: 'Two backs with the ball-carrier lined up to the right'},
+      {t: flong, name: 'Two backs on 8+ to go',
+       when: 'Second or third down, long yardage, two backs'},
+    ].filter(r => r.t);
+
+    const readRow = (r, i) => `<article class="read${i===0?' top':''}">
+      <div class="rtop">
+        <div>
+          <div class="rname">${esc(r.name)}</div>
+          <div class="rwhen">${esc(r.when)}</div>
         </div>
+        <div class="rbig">${pc(r.t.run.rate)}<span>run</span></div>
       </div>
-      <div class="tfoot">
-        <span class="lbl">Film</span> ${hudl(t.clips)}
-        &nbsp;&middot;&nbsp; <span class="lbl">Clips</span>
-        <code>${t.clips.map(c => String(c).padStart(3,'0')).join(' ')}</code>
-        <details class="film"><summary>Show ${t.clips.length} frames</summary>
-          <div class="films">${t.clips.map(c => {
+      <div class="rbar">${rateBar(r.t.run)}</div>
+      <p class="rrange">Ran it <b>${r.t.run.k} times out of ${r.t.run.n}</b>.
+        On this much film the real number could be as low as ${pc(r.t.run.lo)} or as high as
+        ${pc(r.t.run.hi)} &mdash; and <b>${r.t.bgap_of_runs.k} of those ${r.t.bgap_of_runs.n} runs
+        hit B gap</b>.</p>
+      <div class="rfoot">
+        <span class="lbl">Check it on film &mdash;</span> ${hudl(r.t.clips)}
+        <details class="film"><summary>Show the ${r.t.clips.length} snaps</summary>
+          <div class="films">${r.t.clips.map(c => {
             const p = plays[String(c)]; if(!p) return '';
             return `<figure class="film">
-              <img src="frames/${esc(p.image)}" alt="Pre-snap frame, clip ${c}" loading="lazy">
+              <img src="frames/${esc(p.image)}" alt="Pre-snap look, clip ${c}" loading="lazy">
               <figcaption><b>${esc(p.call || '—')}</b>
-                Clip ${String(c).padStart(3,'0')} &middot; G${p.game} #${esc(p.playno||'?')}<br>
-                ${esc(p.dn)}&amp;${esc(p.dist)} &middot; ${esc(p.gain||0)} yd
-                &middot; ${esc(p.gap ? p.gap + ' gap' : p.type)}</figcaption></figure>`;
+                Clip ${String(c).padStart(3,'0')} &middot; Game ${p.game} #${esc(p.playno||'?')}<br>
+                ${esc(p.dn)} &amp; ${esc(p.dist)} &middot; ${esc(p.gain||0)} yards
+                ${p.gap ? '&middot; ' + esc(p.gap) + ' gap' : ''}</figcaption></figure>`;
           }).join('')}</div></details>
       </div>
     </article>`;
@@ -469,130 +438,171 @@
     app.className = '';
     app.innerHTML = `
       <section class="call">
-        <div class="callhead">The read &mdash; holds in all three games</div>
+        <div class="callhead">The read &mdash; it showed up in all three games</div>
         <div class="steps">
           <div class="step">
             <div class="steplab">1 &middot; See</div>
             <div class="stepbig">Two backs,<br>no tight end</div>
             ${playCard('20', 'RIGHT')}
-            <p class="pccap">Shaded: the two B gaps. Line and backfield are exact;
-              receiver splits vary by snap.</p>
-            <div class="stepsub">20 personnel &mdash; ${p20.run.n} snaps on film.<br>
-              Count the backs; you do not need the formation name.</div>
+            <div class="stepsub">Count the backs. You do not need the formation name.
+              <b>${p20.run.n} snaps</b> of this on film.</div>
           </div>
           <div class="arrow" aria-hidden="true">&rarr;</div>
           <div class="step">
             <div class="steplab">2 &middot; Expect</div>
-            <div class="stepbig run">${pc(p20.run.rate)} run</div>
-            <div class="stepsub">${p20.run.k} of ${p20.run.n}, against a ${pc(base)} base rate.<br>
-              ${falcon.run.n} of those ${p20.run.n} were Falcon, and those ran
-              ${pc(falcon.run.rate)}.</div>
+            <div class="stepbig run">Run</div>
+            <div class="stepsub">They ran it <b>${p20.run.k} of ${p20.run.n} times</b>.
+              Two backs is not just a lean &mdash; it puts them in their run package.
+              Only <b>${passSeries20}</b> of those snaps came out of their pass series.</div>
           </div>
           <div class="arrow" aria-hidden="true">&rarr;</div>
           <div class="step">
             <div class="steplab">3 &middot; Fit</div>
             <div class="stepbig run">B gap</div>
-            <div class="stepsub">${pc(g.gap.runs.rate)} of their runs
-              (${g.gap.runs.k}/${g.gap.runs.n}).<br>
-              Only ${pc((Object.fromEntries(g.gap.pass_spread).B||0) /
-                g.gap.pass_spread.reduce((a,[,v])=>a+v,0))} of passes go there.</div>
+            <div class="stepsub">Between guard and tackle.
+              <b>${g.gap.runs.k} of their ${g.gap.runs.n} runs</b> went there.
+              Passes almost never do &mdash; only ${passB} of ${pTot}.</div>
           </div>
         </div>
-        <div class="kicker">Sharpest version: <b>Falcon with the back set right</b> went
-          <b>${fbr.run.k}-for-${fbr.run.n} run</b>, and <b>${fbr.bgap_of_runs.k} of those
-          ${fbr.bgap_of_runs.n}</b> hit B gap. Small sample &mdash; it appeared in two of the
-          three games &mdash; so treat it as a lean, not a lock.</div>
+        <div class="kicker">Downhill power out of two backs, behind a pulling guard.
+          If you see two backs and no tight end, get your fits right in the B gap and make
+          them prove they can do something else.</div>
       </section>
 
-      <h2 class="sec">Pre-snap triggers</h2>
-      <p class="lede">Ordered by how often you will actually see the look. The bar is the run
-        rate, the thin line its 95% interval, the dashed line their ${pc(base)} base rate. Small
-        dots are each game on its own &mdash; every read below points the same way in every game
-        it appears in. Note these <b>overlap rather than stack</b>: every Falcon snap is 20
-        personnel, so the ${p20.run.n} in the top row already contain the ${falcon.run.n} Falcon
-        snaps. The rest are Falcon Strong and one Twins Flex.</p>
-      <div class="legend">
-        <span class="key"><span class="sw r"></span>Run rate</span>
-        <span class="key"><span class="sw b"></span>Base rate (${pc(base)})</span>
-        <span class="key">Small dots: each game separately</span>
-      </div>
-      ${trigs.map(trigRow).join('')}
+      <h2 class="sec">The read, tightened up</h2>
+      <p class="lede">Same read, narrowed down. These are <b>not three separate things</b> &mdash;
+        they are the same snaps looked at more closely, so the numbers overlap. The more you
+        narrow it, the stronger it looks and the less film it rests on.</p>
+      ${reads.map(readRow).join('')}
 
       <h2 class="sec">Count the backs</h2>
-      <p class="lede">The whole read is the backfield. Two backs is the tell; one back is
-        the coin flip they run most often. Both cards below are their own personnel
-        groupings, drawn to the same scale.</p>
-      <div class="compare">
-        <div class="cmp">
-          <div class="cmphead"><b>Two backs, no tight end</b>
-            <span class="cmprate run">82% run</span></div>
+      <p class="lede">The whole read is the backfield. Two backs is the tell. One back is the
+        look they use most, and it tells you nothing &mdash; so do not guess on it.</p>
+      <div class="pair">
+        <figure class="box">
+          <figcaption class="boxhead"><b>Two backs</b>
+            <span class="tag run">Run</span></figcaption>
           ${playCard('20', 'RIGHT')}
-          <p class="pccap">20 personnel &middot; 28 snaps &middot; 88 / 60 / 83% by game.
-            Shaded: the B gaps, where 80% of their runs go.</p>
-        </div>
-        <div class="cmp">
-          <div class="cmphead"><b>One back, no tight end</b>
-            <span class="cmprate flat">47% run</span></div>
+          <p class="cap"><b>${p20.run.n} snaps.</b> Ran it ${p20.run.k} times.
+            Held up in all three games. Shaded strips are the B gaps.</p>
+        </figure>
+        <figure class="box">
+          <figcaption class="boxhead"><b>One back</b>
+            <span class="tag flat">Coin flip</span></figcaption>
           ${playCard('10', 'RIGHT')}
-          <p class="pccap">10 personnel &middot; 38 snaps &middot; 54 / 33 / 47% by game.
-            Their most common look, and it tells you nothing. Play it straight.</p>
-        </div>
+          <p class="cap"><b>38 snaps</b> &mdash; their most common look, and it ran about
+            half the time in every game. Play it straight.</p>
+        </figure>
       </div>
 
       <h2 class="sec">Where the run goes</h2>
-      <p class="lede">This is the other half of the read, and it is not conditional on anything
-        &mdash; it is simply where they run. Passes go somewhere else entirely, which is what
-        makes the split useful.</p>
-      <div class="legend">
-        <span class="key"><span class="sw r"></span>Share of runs (${g.gap.runs.n} tagged)</span>
-        <span class="key"><span class="sw p"></span>Share of passes</span>
-      </div>
-      <div class="gapbox">
-        ${gapChart(g.gap)}
-        <p class="gapnote"><b>B gap is ${pc(g.gap.runs.rate)} of their runs and
-          ${pc((Object.fromEntries(g.gap.pass_spread).B||0) /
-             g.gap.pass_spread.reduce((a,[,v])=>a+v,0))} of their passes.</b>
-          The pass game lives in D and E-Alley. If the ball is inside, it is a run.</p>
-        <p class="gapnote"><b>Watch the trend.</b> B gap was
-          ${pc(g.gap.per_game['1'].rate)} of runs in game 1
-          (${g.gap.per_game['1'].k}/${g.gap.per_game['1'].n}) but
-          ${pc(g.gap.per_game['2'].rate)} and ${pc(g.gap.per_game['3'].rate)} in games 2 and 3.
-          If that film is in date order they are already widening it, and the number you should
-          plan against is nearer two thirds than nine tenths.</p>
-        <div class="tablewrap">
-          <table>
-            <caption class="printonly" style="text-align:left;padding:6px 10px;font-size:10pt">
-              Gap distribution</caption>
-            <thead><tr><th>Gap</th><th class="num">Runs</th><th class="num">% of runs</th>
-              <th class="num">Passes</th><th class="num">% of passes</th></tr></thead>
-            <tbody>${['A','B','C','D','E-Alley'].map(c => {
-              const rM = Object.fromEntries(g.gap.run_spread);
-              const pM = Object.fromEntries(g.gap.pass_spread);
-              const rT = g.gap.run_spread.reduce((a,[,v])=>a+v,0);
-              const pT = g.gap.pass_spread.reduce((a,[,v])=>a+v,0);
-              return `<tr><td>${c}</td><td class="num">${rM[c]||0}</td>
-                <td class="num">${pc((rM[c]||0)/rT)}</td><td class="num">${pM[c]||0}</td>
-                <td class="num">${pc((pM[c]||0)/pT)}</td></tr>`;
-            }).join('')}</tbody>
+      <p class="lede">Not conditional on anything. This is simply where they run it, whatever
+        they line up in. Arrow thickness is how often.</p>
+      <div class="pair">
+        <figure class="box">
+          <figcaption class="boxhead"><b>Their runs</b>
+            <span class="tag run">${pc(g.gap.runs.rate)} B gap</span></figcaption>
+          ${gapField(g.gap.run_spread, g.gap.runs.n, 'run', 'runs')}
+          <p class="cap">Four out of five runs come between guard and tackle.
+            Both sides are drawn the same because <b>the film tells us the gap, never the
+            side</b>.</p>
+        </figure>
+        <figure class="box">
+          <figcaption class="boxhead"><b>Their run calls</b>
+            <span class="tag run">${(g.series.menu||[]).filter(m=>m.runs>=3)
+              .reduce((a,m)=>a+m.runs,0)} runs</span></figcaption>
+          <table class="calls">
+            <thead><tr><th>Their call</th><th class="n">Times</th><th>Gap</th></tr></thead>
+            <tbody>${(g.series.menu||[]).filter(m => m.runs >= 3)
+              .sort((a,b) => b.runs - a.runs).slice(0, 5).map(m => `<tr>
+                <td class="c">${esc(m.calls.slice(0,2).join(', '))}</td>
+                <td class="n">${m.runs}</td>
+                <td class="g">${m.gaps.length ? esc(m.gaps[0][0]) : '&mdash;'}</td>
+              </tr>`).join('')}</tbody>
           </table>
-        </div>
+          <p class="cap">Odd numbers go left, even go right &mdash; their own numbering.
+            <b>G</b> means a guard pulls, <b>GF</b> adds the fullback. Straight-ahead
+            gap-scheme power.</p>
+        </figure>
+      </div>
+
+      <div class="heads">
+        <h3>Heads up &mdash; they may be widening it out</h3>
+        <p>B gap was <b>${pc(g.gap.per_game['1'].rate)}</b> of their runs in the first game
+          but only <b>${pc(g.gap.per_game['2'].rate)}</b> and
+          <b>${pc(g.gap.per_game['3'].rate)}</b> in the next two. If that film is in date
+          order they are already getting away from it. <b>Plan against two thirds, not nine
+          tenths</b> &mdash; keep your edges honest.</p>
       </div>
 
       <h2 class="sec">Do not coach these</h2>
-      <p class="lede">Each of these was tested the same way as the reads above and came back
-        empty. Worth knowing so nobody spends Thursday installing a check for a tell that is
-        not there.</p>
+      <p class="lede">We looked hard for each of these and came up empty. Worth knowing so
+        nobody spends Thursday installing a check for a tell that is not there.</p>
       <div class="nots">
-        ${g.no_tell.map(n => `<div class="not">
-          <span class="verdict">No tell found</span>
-          <h3>${esc(n.q)}</h3>
-          <p>${esc(n.detail)}<span class="b">${esc(n.base)}</span></p>
-        </div>`).join('')}
+        <div class="not">
+          <h3>Which way is it going?</h3>
+          <p>Nothing they show before the snap tells you the side. We checked formation,
+            personnel, backfield, hash and down &mdash; every one of them came out near
+            50/50.<span class="b">They went right on 54% of snaps. That is a coin flip.</span></p>
+        </div>
+        <div class="not">
+          <h3>Is the big one coming?</h3>
+          <p>No look tips an explosive play. Nothing about how they line up tells you when
+            they are about to break one.<span class="b">About 1 play in 5 gained 12 or more
+            yards.</span></p>
+        </div>
+        <div class="not">
+          <h3>Does the look pick the gap?</h3>
+          <p>No &mdash; and it does not need to. B gap is where nearly everything goes
+            regardless of what they show you, so fit it every time.<span class="b">4 of every
+            5 runs on film hit B gap.</span></p>
+        </div>
+      </div>
+
+      <h2 class="sec">How we checked it</h2>
+      <p class="lede">A report can show a read that happened four times in one game and
+        never again. Every read here had to clear three bars: enough snaps to mean
+        something, a margin bigger than luck explains, and <b>the same answer in every
+        game it showed up in</b>. That last one killed most of them. We also checked the
+        tags themselves against the film before trusting any of it.</p>
+      <div class="checked">
+        <div class="chk ok">
+          <div class="chklab">What held up</div>
+          <ul>
+            <li><b>Their own play numbers agree with the gap tags.</b> Every single
+              &ldquo;4&rdquo; call is marked B gap, and 15 of 17 &ldquo;3&rdquo; calls are
+              too. Two separate records telling the same story.</li>
+            <li><b>We pulled one up on film.</b> Clip 43 is tagged 23 G, B gap, to the left.
+              That is exactly what happens &mdash; back takes it left behind the pull.</li>
+            <li><b>Two backs really is a package, not a habit.</b> Only ${passSeries20} of
+              those ${p20.run.n} snaps came out of the series they throw from.</li>
+          </ul>
+        </div>
+        <div class="chk fix">
+          <div class="chklab">What we took out</div>
+          <ul>
+            <li><b>A chart of where their passes go.</b> We could not work out what the film
+              tag meant on a passing play, so we pulled the chart rather than guess at it.
+              What we can say: their passes almost never show up in B gap.</li>
+            <li><b>Trust the numbers, not the pictures.</b> Some still frames on this sheet
+              may be a moment after the snap instead of before it. The numbers are unaffected
+              &mdash; those come straight off the tagged film.</li>
+          </ul>
+        </div>
       </div>
 
       <div class="cav">
         <h3>Before you lean on this</h3>
-        <ul>${g.caveats.map(c => `<li>${esc(c)}</li>`).join('')}</ul>
+        <ul>
+          <li><b>It is three games and ${all.length} snaps.</b> That is not a lot. One series
+            on Friday can move any of these numbers.</li>
+          <li><b>The B gap number is already drifting</b> &mdash; ${pc(g.gap.per_game['1'].rate)}
+            in the first game, about two thirds in the other two.</li>
+          <li><b>We do not know how old this film is.</b> There are no dates or opponent names
+            on it. Worth checking it is this season before you lean on it.</li>
+          <li><b>This is read off hand-tagged film</b>, not off video analysis. Somebody
+            charted every snap; these are their tags, checked.</li>
+        </ul>
       </div>`;
 
     // hover layer

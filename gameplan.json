@@ -2945,5 +2945,296 @@
    "n_off": 15,
    "registered": true
   }
+ },
+ "series": {
+  "menu": [
+   {
+    "series": "90",
+    "n": 16,
+    "runs": 1,
+    "run_rate": 0.0625,
+    "gaps": [
+     [
+      "C",
+      1
+     ]
+    ],
+    "calls": [
+     "90-44",
+     "90-46",
+     "90-5",
+     "90-62"
+    ]
+   },
+   {
+    "series": "91",
+    "n": 14,
+    "runs": 0,
+    "run_rate": 0.0,
+    "gaps": [],
+    "calls": [
+     "91-4",
+     "91-475",
+     "91-4RDUP",
+     "91-5"
+    ]
+   },
+   {
+    "series": "23",
+    "n": 12,
+    "runs": 10,
+    "run_rate": 0.8333333333333334,
+    "gaps": [
+     [
+      "B",
+      9
+     ]
+    ],
+    "calls": [
+     "23 BASE",
+     "23 F",
+     "23 G",
+     "23 GF"
+    ]
+   },
+   {
+    "series": "42",
+    "n": 10,
+    "runs": 6,
+    "run_rate": 0.6,
+    "gaps": [
+     [
+      "B",
+      5
+     ]
+    ],
+    "calls": [
+     "42",
+     "42 AXE",
+     "42 BTLG-95",
+     "42 DBL LEAD"
+    ]
+   },
+   {
+    "series": "24",
+    "n": 9,
+    "runs": 6,
+    "run_rate": 0.6666666666666666,
+    "gaps": [
+     [
+      "B",
+      6
+     ]
+    ],
+    "calls": [
+     "24 BASE",
+     "24 GF",
+     "24 PASS-3RD ARC SCREEN",
+     "24 PASS-5"
+    ]
+   },
+   {
+    "series": "14",
+    "n": 8,
+    "runs": 8,
+    "run_rate": 1.0,
+    "gaps": [
+     [
+      "B",
+      8
+     ]
+    ],
+    "calls": [
+     "14",
+     "14 G",
+     "14 GF",
+     "14 GW"
+    ]
+   },
+   {
+    "series": "43",
+    "n": 7,
+    "runs": 4,
+    "run_rate": 0.5714285714285714,
+    "gaps": [
+     [
+      "B",
+      3
+     ]
+    ],
+    "calls": [
+     "43",
+     "43 BG",
+     "43 BTLG-5689",
+     "43 BTLG-9F5TE6"
+    ]
+   },
+   {
+    "series": "68",
+    "n": 5,
+    "runs": 0,
+    "run_rate": 0.0,
+    "gaps": [],
+    "calls": [
+     "68-4RDUP",
+     "68-656",
+     "68-955",
+     "68-COMEBACK 5"
+    ]
+   },
+   {
+    "series": "19",
+    "n": 5,
+    "runs": 4,
+    "run_rate": 0.8,
+    "gaps": [
+     [
+      "C",
+      2
+     ],
+     [
+      "D",
+      1
+     ]
+    ],
+    "calls": [
+     "19 SPD OPT K",
+     "19 SPD OPT P",
+     "19 UTAH PASS"
+    ]
+   },
+   {
+    "series": "13",
+    "n": 3,
+    "runs": 3,
+    "run_rate": 1.0,
+    "gaps": [
+     [
+      "B",
+      3
+     ]
+    ],
+    "calls": [
+     "13",
+     "13 G"
+    ]
+   },
+   {
+    "series": "37",
+    "n": 3,
+    "runs": 3,
+    "run_rate": 1.0,
+    "gaps": [
+     [
+      "B",
+      3
+     ]
+    ],
+    "calls": [
+     "37 QB DIVE BG"
+    ]
+   },
+   {
+    "series": "18",
+    "n": 3,
+    "runs": 3,
+    "run_rate": 1.0,
+    "gaps": [
+     [
+      "D",
+      2
+     ],
+     [
+      "C",
+      1
+     ]
+    ],
+    "calls": [
+     "18 SPD OPT K",
+     "18 SPD OPT P"
+    ]
+   },
+   {
+    "series": "36",
+    "n": 1,
+    "runs": 1,
+    "run_rate": 1.0,
+    "gaps": [
+     [
+      "B",
+      1
+     ]
+    ],
+    "calls": [
+     "36 QB DIVE BG"
+    ]
+   },
+   {
+    "series": "52",
+    "n": 1,
+    "runs": 1,
+    "run_rate": 1.0,
+    "gaps": [
+     [
+      "B",
+      1
+     ]
+    ],
+    "calls": [
+     "52 F TRAP"
+    ]
+   },
+   {
+    "series": "45",
+    "n": 1,
+    "runs": 1,
+    "run_rate": 1.0,
+    "gaps": [
+     [
+      "C",
+      1
+     ]
+    ],
+    "calls": [
+     "45 BG"
+    ]
+   }
+  ],
+  "pass_series": [
+   "68",
+   "90",
+   "91"
+  ],
+  "pass_series_n": 35,
+  "pass_series_runs": 1,
+  "by_pers": {
+   "20": {
+    "n": 28,
+    "pass_series": 2
+   },
+   "10": {
+    "n": 38,
+    "pass_series": 19
+   },
+   "21": {
+    "n": 22,
+    "pass_series": 7
+   },
+   "11": {
+    "n": 8,
+    "pass_series": 5
+   }
+  }
+ },
+ "audit": {
+  "verified": [
+   "Gap tags match their own hole numbering independently: the 3 hole is tagged B gap on 15 of 17 calls, the 4 hole on 14 of 14. Odd holes go left and even holes go right, matching the direction column. The tagging is internally consistent.",
+   "Spot-checked on video: clip 43 is tagged 23 G, B gap, left. The film shows the back taking it left behind the pull. Tag confirmed.",
+   "Two backs means a run series, not just a run tendency: only 2 of 28 snaps in 20 personnel come from the 90/91/68 pass series."
+  ],
+  "corrected": [
+   "The gap tag on pass plays could not be interpreted. A five-step drop keeps the quarterback in the pocket, yet those snaps are tagged E-Alley seven times, so it is neither the launch point nor where the run fake goes. The earlier 'where the passes go' diagram claimed more than the data supports and was removed.",
+   "The snap detector is far less accurate than first reported: only 13 of 104 clips land within half a second of the real snap, and 20 land after it. The tendencies here come from the tagged breakdown and are unaffected, but some frames shown as pre-snap are not."
+  ]
  }
 }
